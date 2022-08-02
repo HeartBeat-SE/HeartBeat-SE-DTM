@@ -1,15 +1,27 @@
-# This is a basic workflow to help you get started with Actions
-name: Example workflow
+name: Update GitHub Pages
 
-# Controls when the workflow will run
 on:
+  workflow_dispatch:
   push:
-
+    branches:
+      - master
 jobs:
-  hello:
-    runs-on: macos-latest
+  update-gh-pages:
+    name: Generate and upload new GitHub Pages
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, World"
-      - run: |
-          echo "look"
-          echo "I'm a two-liner!"
+      - name: Check out the repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run action
+        uses: ldeluigi/markdown-docs@v0
+        with:
+          src: .
+          dst: ./gh-pages
+          icon: scooter-electric
+      - name: Deploy GH Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./gh-pages
