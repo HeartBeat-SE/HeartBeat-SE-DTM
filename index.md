@@ -1,5 +1,10 @@
 # HeartBeat
 
+### Team Members
+- Amaducci Sara: sara.amaducci@studio.unibo.it - 0001024134
+- Neri Francesca: francesca.neri26@studio.unibo.it - 0001018826
+- Ricci Eleonora: eleonora.ricci13@studio.unibo.it - 0001018800
+
 ### Our Project
 
 Every year, in Italy, over 50,000 people are victims of sudden cardiac arrest.
