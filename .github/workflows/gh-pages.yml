@@ -19,7 +19,8 @@ jobs:
         with:
           src: .
           dst: ./gh-pages
-          icon: scooter-electric
+          primary-color: pink
+          icon: heart-flash
       - name: Deploy GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
