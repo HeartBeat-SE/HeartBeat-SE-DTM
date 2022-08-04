@@ -19,7 +19,7 @@ jobs:
         with:
           src: .
           dst: ./gh-pages
-          primary-color: pink
+          primary-color: red
           icon: heart-flash
       - name: Deploy GH Pages
         uses: peaceiris/actions-gh-pages@v3
