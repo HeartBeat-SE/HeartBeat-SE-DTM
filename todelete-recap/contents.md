@@ -14,3 +14,34 @@
 
 * METHODOLOGIES (define how to arrange and develop the activities)
     - waterfall/ agile / DevOps / DDD .....
+
+## Software Qualities and SE principles 
+
+* External vs Internal qualities
+
+* Representative qualities:
+    - Correctness
+    - Reliability
+    - Robustness
+    - Performance 
+    - Usability
+    - Verifiability
+    - Maintainability
+    - Reparability
+    - Evolvability
+    - Portability
+    - Understandability
+    - Interoperability
+
+* SE PRINCIPLES
+    - Rigor and Formality
+    - Separation of Concerns
+        - Presentation layer
+        - Business layer
+        - Resource access layer
+    - Modularity
+    - Abstraction
+    - Anticipation of change
+    - Generality
+    - Incrementality 
+
