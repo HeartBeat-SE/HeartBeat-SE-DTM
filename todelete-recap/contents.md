@@ -45,3 +45,10 @@
     - Generality
     - Incrementality 
 
+## Software Processes and Engineering Activities
+
+* Software Specification
+* Software Development
+* Software Validation
+* Software Evolution
+
