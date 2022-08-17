@@ -32,4 +32,4 @@ At the same time, it aims at creating a network of **first responders** who, aft
 
 ### Demo of the Project
 
-[Click here to see the demo of the project.](https://cescaneri.github.io/DEMO-HeartBeat/)
+[Click here to see the demo of the project.](https://heartbeat-se.github.io/HeartBeat-DEMO/index.html)
