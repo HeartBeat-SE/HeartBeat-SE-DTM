@@ -52,3 +52,23 @@
 * Software Validation
 * Software Evolution
 
+## Domain Driven Design
+
+* Strategic Design (what and why)
+
+* Tactical Design (how)
+
+* SUBDOMAINS
+    - Core subdomains
+    - Generic subdomains
+    - Supporting subdomains
+
+* Use Cases
+
+* Ubiquitous Language
+    - BOUNDED CONTEXT
+    - Types of boundaries
+        - Physical boundaries
+        - Ownership boundaries (until p. 38)
+
+
