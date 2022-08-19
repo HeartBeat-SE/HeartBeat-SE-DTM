@@ -69,6 +69,12 @@
     - BOUNDED CONTEXT
     - Types of boundaries
         - Physical boundaries
-        - Ownership boundaries (until p. 38)
+        - Ownership boundaries
+* Integrating bounded contexts
+    - COOPERATION
+    - CUSTOMER - SUPPLIER
+    - SEPARATE WAYS
+
+![ddd-tools](DDD.jpg)
 
 
