@@ -77,4 +77,7 @@
 
 ![ddd-tools](DDD.jpg)
 
+## Event Storming
+
+Vedi MIRO :)
 
