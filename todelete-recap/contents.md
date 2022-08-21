@@ -81,3 +81,18 @@
 
 Vedi MIRO :)
 
+## Software Design and Architecture
+
+ * Layered Architecture:
+    - Presentation Layer
+    - Business Logic Layer
+    - Data Access Layer
+
+* Ports and Adapters (API)
+
+* Building Blocks:
+    - Value objects
+    - Entities
+    - Aggregates
+    - Domain events
+    - Domain service
