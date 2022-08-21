@@ -1,4 +1,4 @@
-# HeartBeat-SE-DTM 
+# HeartBeat-SE-DTM :sparkling_heart:
 
 This repository contains the **documentation** regarding the design and the development of HeartBeat, a software that aims at facilitating rapid defibrillation from publicly available AEDs.
 
