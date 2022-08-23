@@ -1,11 +1,11 @@
 # HeartBeat
 
-### Team Members
+## Team Members
 - Amaducci Sara: sara.amaducci@studio.unibo.it - 0001024134
 - Neri Francesca: francesca.neri26@studio.unibo.it - 0001018826
 - Ricci Eleonora: eleonora.ricci13@studio.unibo.it - 0001018800
 
-### Our Project
+## Our Project
 
 Every year, in Italy, over 50,000 people are victims of sudden cardiac arrest.
 According to [ISTAT](https://www.istat.it/en/archivio/199355), the most frequent causes of death in Italy include ischemic heart diseases, cerebrovascular diseases and other heart diseases. 
@@ -24,9 +24,7 @@ The project **HeartBeat** aims at facilitating rapid defibrillation from publicl
 5. Web portal
 6. HeartBeat Mobile App
 
-### Purpose of the Project
-
-
+## Purpose of the Project
 
 The goal of the project is to minimize the time of intervention in the event of a cardio-respiratory arrest. 
 Defibrillation is the only therapy to trait someone in cardiac arrest and represents one of the key steps in saving a life from sudden cardiac arrest.
@@ -36,6 +34,6 @@ This includes the creation of a unique **register of defibrillators** that store
 
 At the same time, it aims at creating a network of **first responders** who, after the attainment of a qualifying certificate for the use of a defibrillator, enroll themselves in the register of the BLSD trained individuals and agree to intervene in case of a medical emergency.
 
-### Demo of the Project
+## Demo of the Project
 
 [Click here to see the demo of the project.](https://heartbeat-se.github.io/HeartBeat-DEMO/index.html)
