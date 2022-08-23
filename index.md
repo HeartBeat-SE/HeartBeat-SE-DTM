@@ -1,4 +1,4 @@
-# HeartBeat
+# HeartBeat Project
 
 ## Team Members
 - Amaducci Sara: sara.amaducci@studio.unibo.it - 0001024134
