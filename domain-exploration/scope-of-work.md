@@ -1,5 +1,7 @@
 # Scope of Work
 
+## Scope of Work Overview
+
 This section describes the environment in which this project can be used. The software is designed as an extension of the management software used by the **118 Emergency Communications Centers**. 
 This latter allows 118 operators to follow each step related to an emergency request, allowing them to manage the following types of services:
 
