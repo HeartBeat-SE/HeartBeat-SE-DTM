@@ -26,7 +26,13 @@ The project **HeartBeat** aims at facilitating rapid defibrillation from publicl
 
 ### Purpose of the Project
 
-The goal of the project is to minimize the time of intervention in the event of a cardio-respiratory arrest. This includes the creation of a unique **register of defibrillators** that stores data homogeneously in the territory.
+
+
+The goal of the project is to minimize the time of intervention in the event of a cardio-respiratory arrest. 
+Defibrillation is the only therapy to trait someone in cardiac arrest and represents one of the key steps in saving a life from sudden cardiac arrest.
+
+The HeartBeat project aims at facilitating rapid intervention from trained individuals while waiting for the ambulance to arrive. 
+This includes the creation of a unique **register of defibrillators** that stores data homogeneously in the territory.
 
 At the same time, it aims at creating a network of **first responders** who, after the attainment of a qualifying certificate for the use of a defibrillator, enroll themselves in the register of the BLSD trained individuals and agree to intervene in case of a medical emergency.
 
