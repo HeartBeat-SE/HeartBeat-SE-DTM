@@ -24,5 +24,7 @@ Once on site, the personnel sent proceeds to assess the injured person and, afte
 
 ## Work Context Diagram 
 
+The context diagram showed below outlines how external entities interact with the software system.
+
 ![Work-Context-Diagram](context.jpg)
 
