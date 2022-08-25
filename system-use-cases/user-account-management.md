@@ -2,7 +2,7 @@
 @startuml
 left to right direction
 actor "User" as fr
-rectangle User Account Management {
+rectangle "User Account Management" {
   usecase "User Account Registration" as UC1
   usecase "User Account Visualization" as UC2
   usecase "BLSD Certificate Expiry" as UC3
