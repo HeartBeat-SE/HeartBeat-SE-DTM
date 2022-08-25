@@ -17,7 +17,7 @@ We identified the **Emergency Progress Management** as the core subdomain as it 
 
 Then, the **User Account Management** constitutes the generic subdomain as it does not generate value for the system.
 
-And finally, the **AED Database Management** supports the system in performing its main function.
+And finally, the **AED Database Management** supports the system in performing its main function.it
 
 
 
