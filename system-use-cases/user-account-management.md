@@ -11,17 +11,20 @@ rectangle "User Account Management" {
   usecase "User Account Registration" as UC1
   usecase "User Account Visualization" as UC2
   usecase "BLSD Certificate Expiry" as UC3
-usecase "User Account Update" as UC3
+  usecase "User Account Update" as UC4
 }
 fr --> UC1
 fr --> UC2
 fr --> UC3
+fr --> UC4
 @enduml
 ```
 
 ## Analysis of Use Cases
 
 In this section we will analyze more in details each use case identified in the User Account Management.
+
+**User registration:**
 
 > 1. User fills a registration form with the following data:
     * Name
