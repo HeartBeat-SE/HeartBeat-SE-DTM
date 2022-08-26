@@ -1,3 +1,5 @@
+## Use Case Diagram
+
 ```plantuml
 @startuml
 left to right direction
@@ -19,3 +21,19 @@ UC4 <-- UC3
 maps --> UC5
 @enduml
 ```
+
+## Analysis of Use Cases
+
+In this section we will analyze more in details each use case identified in the emergency progress management.
+
+**The Emergency Communications Center triggers the emergency process in the system:**
+
+1. The Emergency Communications System sends data about the emergency:
+  - Time of alert
+  - Reference point
+  - Address
+  - Ambulance Estimated Time of Arrival
+2. The system identifies suitable First Responders:
+  - Through active location 
+  - According to the municipality selected
+3. The system sends the alert notification to the selected First Responders.
