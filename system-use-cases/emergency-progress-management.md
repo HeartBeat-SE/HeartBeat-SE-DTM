@@ -31,10 +31,10 @@ In this section we will analyze more in details each use case identified in the 
 **The Emergency Communications Center triggers the emergency process in the system:**
 
 1. The Emergency Communications System sends data about the emergency:
-  - Time of alert
-  - Reference point
-  - Address
-  - Ambulance Estimated Time of Arrival
+  * Time of alert
+  * Reference point
+  * Address
+  * Ambulance Estimated Time of Arrival
 2. The system identifies suitable First Responders:
   - Through active location 
   - According to the municipality selected
