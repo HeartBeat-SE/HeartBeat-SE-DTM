@@ -1,3 +1,7 @@
+# AED Database Management
+
+## Use Case Diagram
+
 ```plantuml
 @startuml
 left to right direction
@@ -12,3 +16,21 @@ fr --> UC2
 fr --> UC3
 @enduml
 ```
+
+## Analysis of Use Cases
+
+In this section we will analyze more in details each use case identified in the AED Database Management.
+
+**AED Registration**
+
+> 1. User fills the AED registration form with the following data:
+    * Name of the place
+    * Address
+    * Additional (_optional_) info about the exact location
+    * Availability (month - days - hours)
+    * Picture (_optional_)
+> 2. User submits the registration form.
+> 3. System confirms registration.
+> 4. System sends the data about the new AED to the Emergency Communications Center, which updates the database.
+> **Extensions:**
+> * Invalid registration due to invalid data.
