@@ -15,9 +15,9 @@ To facilitate our understanding, we decomposed the domain into subdomains. In th
 
 We identified the **Emergency Progress Management** as the core subdomain as it represents the activity that is uniquely performed by the system.
 
-Then, the **User Account Management** constitutes the generic subdomain as it does not generate value for the system.
+Then, the **User Account Management** constitutes the generic subdomain as it does not generate competitive advantage and it does not distinguish the system in the market.
 
-And finally, the **AED Database Management** supports the system in performing its main function.it
+And finally, the **AED Database Management** supports the system in performing its main functions.
 
 
 
