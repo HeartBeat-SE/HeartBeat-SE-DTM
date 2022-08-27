@@ -24,7 +24,7 @@ fr --> UC4
 
 In this section we will analyze more in details each use case identified in the User Account Management.
 
-> **User registration:**
+###User registration:
 
 1. User fills a registration form with the following data:
     * Name
@@ -43,7 +43,7 @@ In this section we will analyze more in details each use case identified in the 
 3. System confirms the registration.
 4. System sends a confirmation email to user. 
 
-> **Extensions:**
+**Extensions:**
 
 * Registration fails due to:
     - Invalid mobile phone number
@@ -54,18 +54,18 @@ In this section we will analyze more in details each use case identified in the 
 * Solution:
     - User re-enters the data
 
-> **User account visualization:**
+###User account visualization:
 
 1. User logins.
 2. System shows accounts info.
 3. User logouts.
 
-> **BLSD certificate expiry:**
+###BLSD certificate expiry:
 
 1. The expiration date of the certificate is 10 days after the day of today.
 2. System alerts user with a notification.
 
-> **User account update:**
+###User account update:
 
 1. User logins.
 2. User updates account info.
