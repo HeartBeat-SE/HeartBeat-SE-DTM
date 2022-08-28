@@ -4,8 +4,9 @@
 
 ```plantuml
 @startuml
-left to right direction
+'left to right direction
 actor "User" as fr
+entity "ECC" as ecc
 rectangle "AED Databse Management" {
   usecase "AED Registration" as UC1
   usecase "AED Map Display" as UC2
@@ -14,6 +15,7 @@ rectangle "AED Databse Management" {
 fr --> UC1
 fr --> UC2
 fr --> UC3
+ecc <-- UC1
 @enduml
 ```
 
