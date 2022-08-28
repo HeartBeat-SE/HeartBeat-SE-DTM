@@ -62,7 +62,7 @@ In this section we will analyze more in details each use case identified in the 
 
 ###BLSD certificate expiry
 
-1. The expiration date of the certificate is 10 days after the day of today.
+1. The expiration date of the certificate is 1 month after the day of today.
 2. System alerts user with a notification.
 
 ###User account update
