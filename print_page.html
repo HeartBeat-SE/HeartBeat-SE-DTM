@@ -1309,7 +1309,16 @@ app.get(&#39;/locations/:id/users&#39;, (req, res) =&gt; {
     res.json(dto)
 })
 </code></pre></div>
-<p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p></section><h1 class='nav-section-title-end'>Ended: System Design</h1></div>
+<p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p></section><section class="print-page" id="system-design-front-end-development"><h1 id="system-design-front-end-development-front-end-development">Front-ENd Development</h1>
+<p>Front-end development refers to the client side of the system with which users can interact directly. For HeartBeat, users have at disposal both a mobile app and a web portal:</p>
+<p>The <strong>mobile app</strong> represents the main interface for users as some operations need direct access to active localization, camera or the calling system. While the <strong>web portal</strong> only constitutes an alternative means by which users can update their profiles.</p>
+<p>The user app communicates with the micro-services through REST APIs in order to transfer data from users to services and vice versa. In particular, its tasks include:</p>
+<ol>
+<li>Users’ data entry and update.</li>
+<li>AEDs’ data entry and update.</li>
+<li>Display of the notification alert and sharing of the data of users who accept it.</li>
+<li>Display of AEDs and communication with the mapping platform.</li>
+</ol></section><h1 class='nav-section-title-end'>Ended: System Design</h1></div>
 
               
 
