@@ -1233,7 +1233,20 @@ software.</p>
 <li>Back-End Technologies</li>
 </ol>
 <p>In this section we will explore each <strong>micro-service</strong> that composes the system, focusing on the relationships among the components and analyzing
-how they interact with each other.</p></section><h1 class='nav-section-title-end'>Ended: System Design</h1></div>
+how they interact with each other.</p></section><section class="print-page" id="system-design-database-system"><h1 id="system-design-database-system-database-system">Database System</h1>
+<p>In our project, the implementation of multiple databases is essential to collect and manage data in a systematic way.</p>
+<p>First, all the information regarding users must be stored and updated in case of changes. Users’ data, identified by a user ID, will be automatically accessed by the system through SQL queries as soon as they are needed for the emergency progress system.</p>
+<p>Then, the registered AEDs must be stored indicating the precise location (expressed using geographical coordinates), the name of the place and all
+the information regarding their availability.</p>
+<p>Finally, data about the emergency will be stored in a database that is
+connected to the emergency micro-service. The system will attribute an ID
+to each emergency and will store the following data:</p>
+<ul>
+<li>Coordinates of the emergency.</li>
+<li>List of first responders who received the alert (specifying whether they
+accepted or declined it).</li>
+<li>List of AEDs located near the emergency.</li>
+</ul></section><h1 class='nav-section-title-end'>Ended: System Design</h1></div>
 
               
 
