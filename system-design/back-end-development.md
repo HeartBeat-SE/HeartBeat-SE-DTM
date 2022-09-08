@@ -70,4 +70,5 @@ app.get('/locations/:id/users', (req, res) => {
 })
 ```
 
-In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.
+In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. 
+Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.

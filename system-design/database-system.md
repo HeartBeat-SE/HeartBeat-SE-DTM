@@ -7,9 +7,8 @@ First, all the information regarding users must be stored and updated in case of
 Then, the registered AEDs must be stored indicating the precise location (expressed using geographical coordinates), the name of the place and all
 the information regarding their availability.
 
-Finally, data about the emergency will be stored in a database that is
-connected to the emergency micro-service. The system will attribute an ID
-to each emergency and will store the following data:
+Finally, data about the emergency will be stored in a database that is connected to the emergency micro-service.
+ The system will attribute an ID to each emergency and will store the following data:
 
 - Coordinates of the emergency.
 - List of first responders who received the alert (specifying whether they
