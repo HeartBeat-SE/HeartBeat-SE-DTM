@@ -1238,9 +1238,8 @@ how they interact with each other.</p></section><section class="print-page" id="
 <p>First, all the information regarding users must be stored and updated in case of changes. Users’ data, identified by a user ID, will be automatically accessed by the system through SQL queries as soon as they are needed for the emergency progress system.</p>
 <p>Then, the registered AEDs must be stored indicating the precise location (expressed using geographical coordinates), the name of the place and all
 the information regarding their availability.</p>
-<p>Finally, data about the emergency will be stored in a database that is
-connected to the emergency micro-service. The system will attribute an ID
-to each emergency and will store the following data:</p>
+<p>Finally, data about the emergency will be stored in a database that is connected to the emergency micro-service.
+ The system will attribute an ID to each emergency and will store the following data:</p>
 <ul>
 <li>Coordinates of the emergency.</li>
 <li>List of first responders who received the alert (specifying whether they
@@ -1309,9 +1308,11 @@ app.get(&#39;/locations/:id/users&#39;, (req, res) =&gt; {
     res.json(dto)
 })
 </code></pre></div>
-<p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p></section><section class="print-page" id="system-design-front-end-development"><h1 id="system-design-front-end-development-front-end-development">Front-ENd Development</h1>
+<p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. 
+Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p></section><section class="print-page" id="system-design-front-end-development"><h1 id="system-design-front-end-development-front-end-development">Front-End Development</h1>
 <p>Front-end development refers to the client side of the system with which users can interact directly. For HeartBeat, users have at disposal both a mobile app and a web portal:</p>
-<p>The <strong>mobile app</strong> represents the main interface for users as some operations need direct access to active localization, camera or the calling system. While the <strong>web portal</strong> only constitutes an alternative means by which users can update their profiles.</p>
+<p>The <strong>mobile app</strong> represents the main interface for users as some operations need direct access to active localization, camera or the calling system. 
+While the <strong>web portal</strong> only constitutes an alternative means by which users can update their profiles.</p>
 <p>The user app communicates with the micro-services through REST APIs in order to transfer data from users to services and vice versa. In particular, its tasks include:</p>
 <ol>
 <li>Users’ data entry and update.</li>
