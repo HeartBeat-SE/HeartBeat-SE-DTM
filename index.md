@@ -7,8 +7,8 @@
 
 ## Our Project
 
-Every year, in Italy, over 50,000 people are victims of sudden cardiac arrest.
-According to [ISTAT](https://www.istat.it/en/archivio/199355), the most frequent causes of death in Italy include ischemic heart diseases, cerebrovascular diseases and other heart diseases. 
+Every year, in Italy, over 150,000 people are victims of sudden cardiac arrest.
+According to [SIPREC (Società Italiana per la Prevenzione Cardiovascolare)](http://www.healthdesk.it/prevenzione/malattie-cardiache-record-morti-italia-240-mila-ogni-anno), the most frequent causes of death in Italy include ischemic heart diseases, cerebrovascular diseases and other heart diseases. 
 
 >Defibrillating within 3-5 minutes of the onset of cardiac arrest can lead to survival by up to 50-70%.
 But if no one intervenes, their chances of survival drop 10-12% for every minute that passes.
