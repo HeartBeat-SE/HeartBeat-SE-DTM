@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#back-end-development" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -539,10 +544,64 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Back-End Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="back-end-development.html" class="md-nav__link md-nav__link--active">
         Back-End Development
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#account-service" class="md-nav__link">
+    Account Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aed-service" class="md-nav__link">
+    AED Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emergency-service" class="md-nav__link">
+    Emergency Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-design-between-account-service-and-aed-service" class="md-nav__link">
+    API Design between account-service and AED service
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -601,6 +660,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#account-service" class="md-nav__link">
+    Account Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aed-service" class="md-nav__link">
+    AED Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emergency-service" class="md-nav__link">
+    Emergency Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-design-between-account-service-and-aed-service" class="md-nav__link">
+    API Design between account-service and AED service
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -619,20 +716,81 @@
 
 
 
-  <h1>Back-End Development</h1>
+<h1 id="back-end-development">Back-End Development</h1>
+<p>The back-end refers to the parts of the application that allow it to operate and that cannot be accessed by users. </p>
+<p>We identified three micro-services that communicate with each other and with the mobile application through REST APIs.</p>
+<h2 id="account-service">Account Service</h2>
+<p>The first micro-service regards all the operations concerning users’ accounts. More in details, the tasks performed by the <strong>account-service</strong> include:</p>
+<ol>
+<li>Communication with the accounts’ database through SQL queries to
+insert, update and delete accounts.</li>
+<li>Identification of the suitable first responders on the basis of the location of the emergency.</li>
+<li>Creation and management of the notification alerts sent to users.</li>
+</ol>
+<h2 id="aed-service">AED Service</h2>
+<p>Then, the operations regarding AEDs locations are in charge of the <strong>AED-service</strong>. 
+In particular, the tasks performed by this micro-service include:</p>
+<ol>
+<li>Communication with the AEDs’ database through SQL queries to insert, update and delete AEDs.</li>
+<li>Identification of the AEDs located near the emergency.</li>
+</ol>
+<h2 id="emergency-service">Emergency Service</h2>
+<p>The last micro-service that is part of the back-end development is the <strong>emergency-service</strong>. 
+This service communicates with the other two services through REST APIs, as we saw in the example above, and with the emergency database with SQL queries. 
+The tasks performed by the emergency-service, include:</p>
+<ol>
+<li>Elaboration of the data received by the Emergency Communications Center and emergency database update.</li>
+<li>Sharing of the emergency data to the other micro-services and the user app.</li>
+<li>Sharing with the Emergency Communications Center of the data about first responders who accepted the alert.</li>
+</ol>
+<h2 id="api-design-between-account-service-and-aed-service">API Design between account-service and AED service</h2>
+<div class="highlight"><pre><span></span><code>app.get(&quot;/&quot;, (req, res) =&gt; { 
+    res.send(&quot;This is an API between users and AED locations&quot;) 
+})
 
+app.get(&#39;/users&#39;, (req, res) =&gt; { 
+    let dto = []
+    for(user of userModel.getAllUsers()){
+        let userDto = convertToUserDto(user)
+        dto.push(userDto)
+    }
 
+    res.json(dto)
+})
+
+app.post(&quot;/users&quot;, (req, res) =&gt; { 
+    try {
+        userModel.registerNewUser(req.body.userId, req.body.name, req.body.city) 
+        res.json(userModel.getUserById(req.body.userId))
+    } catch (error){
+        res.status(400).json({ error });
+    }   
+})
+
+app.get(&#39;/locations&#39;, (req, res) =&gt; {
+    res.json(locations)
+})
+
+app.get(&#39;/locations/:id/users&#39;, (req, res) =&gt; {
+    let dto = userModel
+        .getAllUsers() 
+        .filter(u =&gt; u.locations.includes(req.params.id)) 
+        .map(convertToUserDto)
+    res.json(dto)
+})
+</code></pre></div>
+<p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 8, 2022 15:16:01</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 8, 2022 15:25:29</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 8, 2022 15:16:01</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 8, 2022 15:25:29</span>
       
     
   </small>

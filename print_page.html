@@ -1246,7 +1246,70 @@ to each emergency and will store the following data:</p>
 <li>List of first responders who received the alert (specifying whether they
 accepted or declined it).</li>
 <li>List of AEDs located near the emergency.</li>
-</ul></section><h1 class='nav-section-title-end'>Ended: System Design</h1></div>
+</ul></section><section class="print-page" id="system-design-back-end-development"><h1 id="system-design-back-end-development-back-end-development">Back-End Development</h1>
+<p>The back-end refers to the parts of the application that allow it to operate and that cannot be accessed by users. </p>
+<p>We identified three micro-services that communicate with each other and with the mobile application through REST APIs.</p>
+<h2 id="system-design-back-end-development-account-service">Account Service</h2>
+<p>The first micro-service regards all the operations concerning users’ accounts. More in details, the tasks performed by the <strong>account-service</strong> include:</p>
+<ol>
+<li>Communication with the accounts’ database through SQL queries to
+insert, update and delete accounts.</li>
+<li>Identification of the suitable first responders on the basis of the location of the emergency.</li>
+<li>Creation and management of the notification alerts sent to users.</li>
+</ol>
+<h2 id="system-design-back-end-development-aed-service">AED Service</h2>
+<p>Then, the operations regarding AEDs locations are in charge of the <strong>AED-service</strong>. 
+In particular, the tasks performed by this micro-service include:</p>
+<ol>
+<li>Communication with the AEDs’ database through SQL queries to insert, update and delete AEDs.</li>
+<li>Identification of the AEDs located near the emergency.</li>
+</ol>
+<h2 id="system-design-back-end-development-emergency-service">Emergency Service</h2>
+<p>The last micro-service that is part of the back-end development is the <strong>emergency-service</strong>. 
+This service communicates with the other two services through REST APIs, as we saw in the example above, and with the emergency database with SQL queries. 
+The tasks performed by the emergency-service, include:</p>
+<ol>
+<li>Elaboration of the data received by the Emergency Communications Center and emergency database update.</li>
+<li>Sharing of the emergency data to the other micro-services and the user app.</li>
+<li>Sharing with the Emergency Communications Center of the data about first responders who accepted the alert.</li>
+</ol>
+<h2 id="system-design-back-end-development-api-design-between-account-service-and-aed-service">API Design between account-service and AED service</h2>
+<div class="highlight"><pre><span></span><code>app.get(&quot;/&quot;, (req, res) =&gt; { 
+    res.send(&quot;This is an API between users and AED locations&quot;) 
+})
+
+app.get(&#39;/users&#39;, (req, res) =&gt; { 
+    let dto = []
+    for(user of userModel.getAllUsers()){
+        let userDto = convertToUserDto(user)
+        dto.push(userDto)
+    }
+
+    res.json(dto)
+})
+
+app.post(&quot;/users&quot;, (req, res) =&gt; { 
+    try {
+        userModel.registerNewUser(req.body.userId, req.body.name, req.body.city) 
+        res.json(userModel.getUserById(req.body.userId))
+    } catch (error){
+        res.status(400).json({ error });
+    }   
+})
+
+app.get(&#39;/locations&#39;, (req, res) =&gt; {
+    res.json(locations)
+})
+
+app.get(&#39;/locations/:id/users&#39;, (req, res) =&gt; {
+    let dto = userModel
+        .getAllUsers() 
+        .filter(u =&gt; u.locations.includes(req.params.id)) 
+        .map(convertToUserDto)
+    res.json(dto)
+})
+</code></pre></div>
+<p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p></section><h1 class='nav-section-title-end'>Ended: System Design</h1></div>
 
               
 
