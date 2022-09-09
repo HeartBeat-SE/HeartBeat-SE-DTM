@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#performance-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -449,10 +454,57 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Performance Requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="performance-requirements.html" class="md-nav__link md-nav__link--active">
         Performance Requirements
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#response-time" class="md-nav__link">
+    Response Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload" class="md-nav__link">
+    Workload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    Scalability
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -601,6 +653,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#response-time" class="md-nav__link">
+    Response Time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload" class="md-nav__link">
+    Workload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    Scalability
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -619,16 +702,33 @@
 
 
 
-  <h1>Performance Requirements</h1>
-
-
+<h1 id="performance-requirements">Performance Requirements</h1>
+<p>Performance requirements define how well the software system accomplishes certain functions under specific conditions. 
+To assess the performance of the system, we analyzed the following characteristics: response time, workload and scalability.</p>
+<h2 id="response-time">Response Time</h2>
+<p>The response time refers to the time employed to execute and complete specific tasks. Considering the environment in which HeartBeat operates, speed of execution is a crucial aspect:
+The goal of the software is to minimize the time of intervention in case of cardiac arrest, so, it is essential for the micro-services to communicate rapidly with each others and with the user app.</p>
+<h2 id="workload">Workload</h2>
+<p>To assess the workload, we built a table of volumes to estimate data volumes and usage frequency of the databases of the system. 
+In table 1, we estimated the volume of data flowing to the database systems, in the region of Emilia Romagna, every month.</p>
+<p><img alt="Table of Volumes" src="volumes.jpg" /></p>
+<p>As we can see, around 150 new users download the application and enroll themselves to the register of first responders.</p>
+<p>Then, we estimated around 50 new AED added each month to the regional register of defibrillators, which would imply updating both the ECC official list and the HeartBeat database.</p>
+<p>Emergency data refers to the data that are shared by the Emergency Communications Center every time a ’code blue’ is recorded. Keeping in mind that around 150.000 people are victim of sudden heart attack every year, we estimated around 600 emergencies in the area of Emilia Romagna every month.</p>
+<p>Finally, first responder refers to the recording of the data of users who accepted the emergency alert, while real-time location concerns the recording of their coordinates. 
+The frequency of these two entities is the same and we estimated that given 600 sudden cardiac arrest, HeartBeat would
+successfully identify suitable first responders and AED 50% of the times.</p>
+<h2 id="scalability">Scalability</h2>
+<p>Scalability refers to the ability of the software to handle increased workloads with minimal cost impact. In this case, keeping in mind that Heart- Beat operates on a regional level, data should flow at a constant rate.</p>
+<p>Of course, in case of expansion, the system would have to deal with increased workload and scalability issues. 
+However, for what concerns performance requirements, the most important one regards the speed of execution.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">August 23, 2022 20:59:47</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 9, 2022 10:48:17</span>
       
         <br>
         Created:
@@ -646,7 +746,7 @@
   
     <div class="md-source-date">
       <small>
-          Authors: <span class='git-page-authors git-authors'></span>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:104086181+cescaneri@users.noreply.github.com'>Francesca Neri</a></span>
       </small>
     </div>
   
