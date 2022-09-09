@@ -11,7 +11,7 @@ The goal of the software is to minimize the time of intervention in case of card
 ## Workload
 
 To assess the workload, we built a table of volumes to estimate data volumes and usage frequency of the databases of the system. 
-In table 1, we estimated the volume of data flowing to the database systems, in the region of Emilia Romagna, every month.
+In the table showed below, we estimated the volume of data flowing to the database systems, in the region of Emilia Romagna, every month.
 
 ![Table of Volumes](volumes.jpg)
 
