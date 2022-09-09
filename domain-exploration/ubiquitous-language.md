@@ -10,7 +10,7 @@ List of AED that are located in public or private structures, which can be not a
 
 ### AED Database
 
-A structured set of data about First Responders and AEDs held and updated by the *AUSL*.
+AEDs must be stored indicating the precise location (expressed using geographical coordinates), the name of the place and all the information regarding their availability.
 
 ### Code Blue
 
