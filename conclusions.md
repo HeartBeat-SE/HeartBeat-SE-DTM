@@ -35,5 +35,23 @@ standing
 
 
 ## DevOps
+To implement DevOps in our project, the first step to undertake regards the effective integration of people, processes, and tools to obtain a single entity.
+The purpose is to encourage collaboration and align IT goals with business strategy.
+
+Then, it is essential to adopt an end-user-centric  process to deliver a service that exceeds users' expectations regarding time, functionality, and performance.
+In this regard, DevOps aims at achieving efficiency by leveraging end-users feedback for constant improvement.
+
+A key practice used in DevOps is automation: through automation, it is possible to save valuable resources in terms of cost, time, and efforts of developers and testers.Continuous integration is the key to a successful DevOps strategy.
+It enables developers to build software in small, regular steps by immediately identifying defects and rendering feedback.
 
 ## Future Improvements
+After having discussed in group about potential future improvements, we identified two features that could enhance the user experience:
+
+- Gamification
+- Emergency Progress Status
+
+Gamification refers to the application of game-design elements, in non-gaming contexts, to educate, entertain and engage users.
+Here, the idea would be to introduce gamification elements to stimulate learning and training experiences towards health, first aid and emergencies' management.
+
+The Emergency Progress Status, on the other hand, regards an additional feature which allows first responders receiving the help request to see the status of the emergency.
+More in details, they would be able to see the number of people who accept the request, their movements in the map and they would have the possibility to contact them.
