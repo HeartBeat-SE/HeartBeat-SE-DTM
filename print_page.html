@@ -1345,40 +1345,40 @@ The tasks performed by the emergency-service, include:</p>
 <li>Sharing with the Emergency Communications Center of the data about first responders who accepted the alert.</li>
 </ol>
 <h2 id="system-design-back-end-development-api-design-between-account-service-and-aed-service">API Design between account-service and AED service</h2>
-<div class="highlight"><pre><span></span><code>app.get(&quot;/&quot;, (req, res) =&gt; { 
-    res.send(&quot;This is an API between users and AED locations&quot;) 
-})
+<div class="highlight"><pre><span></span><code><span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="s">&quot;This is an API between users and AED locations&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="p">})</span><span class="w"></span>
 
-app.get(&#39;/users&#39;, (req, res) =&gt; { 
-    let dto = []
-    for(user of userModel.getAllUsers()){
-        let userDto = convertToUserDto(user)
-        dto.push(userDto)
-    }
+<span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">users</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">dto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">userModel</span><span class="p">.</span><span class="na">getAllUsers</span><span class="p">()){</span><span class="w"></span>
+<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">userDto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">convertToUserDto</span><span class="p">(</span><span class="n">user</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">dto</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">userDto</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    res.json(dto)
-})
+<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 
-app.post(&quot;/users&quot;, (req, res) =&gt; { 
-    try {
-        userModel.registerNewUser(req.body.userId, req.body.name, req.body.city) 
-        res.json(userModel.getUserById(req.body.userId))
-    } catch (error){
-        res.status(400).json({ error });
-    }   
-})
+<span class="n">app</span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">&quot;/users&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">userModel</span><span class="p">.</span><span class="na">registerNewUser</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">userId</span><span class="p">,</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">name</span><span class="p">,</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">city</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">userModel</span><span class="p">.</span><span class="na">getUserById</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">userId</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">res</span><span class="p">.</span><span class="na">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="na">json</span><span class="p">({</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">   </span>
+<span class="p">})</span><span class="w"></span>
 
-app.get(&#39;/locations&#39;, (req, res) =&gt; {
-    res.json(locations)
-})
+<span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">locations</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">locations</span><span class="p">)</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 
-app.get(&#39;/locations/:id/users&#39;, (req, res) =&gt; {
-    let dto = userModel
-        .getAllUsers() 
-        .filter(u =&gt; u.locations.includes(req.params.id)) 
-        .map(convertToUserDto)
-    res.json(dto)
-})
+<span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">locations</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="o">/</span><span class="n">users</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">dto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userModel</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">getAllUsers</span><span class="p">()</span><span class="w"> </span>
+<span class="w">        </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="na">locations</span><span class="p">.</span><span class="na">includes</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">params</span><span class="p">.</span><span class="na">id</span><span class="p">))</span><span class="w"> </span>
+<span class="w">        </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">convertToUserDto</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </code></pre></div>
 <p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. 
 Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p></section><section class="print-page" id="system-design-front-end-development"><h1 id="system-design-front-end-development-front-end-development">Front-End Development</h1>

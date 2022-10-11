@@ -33,7 +33,7 @@ The tasks performed by the emergency-service, include:
 
 ## API Design between account-service and AED service
 
-```
+```java
 app.get("/", (req, res) => { 
 	res.send("This is an API between users and AED locations") 
 })
