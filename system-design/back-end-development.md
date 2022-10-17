@@ -87,3 +87,5 @@ The code block showed above displays the design of some APIs that perform the fo
 - Read data about the emergency
 - Read data about AED locations
 - Read data about AED locations based on the location of first responders
+
+[Click on the following link to see the API implementation](https://github.com/HeartBeat-SE/System-Design)
