@@ -2,3 +2,4 @@
 * [Database System](database-system.md)
 * [Back-End Development](back-end-development.md)
 * [Front-End Development](front-end-development.md)
+* [Emergency Signalling and ECC functioning](ecc-functioning.md)
