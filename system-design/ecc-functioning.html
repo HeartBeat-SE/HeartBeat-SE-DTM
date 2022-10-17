@@ -13,7 +13,7 @@
     
     
       
-        <title>Back-End Development - HeartBeat-SE/HeartBeat-SE-DTM</title>
+        <title>Emergency Signalling and ECC functioning - HeartBeat-SE/HeartBeat-SE-DTM</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#back-end-development" class="md-skip">
+        <a href="#emergency-communication-center-functioning" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Back-End Development
+              Emergency Signalling and ECC functioning
             
           </span>
         </div>
@@ -536,73 +536,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Back-End Development
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="back-end-development.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="back-end-development.html" class="md-nav__link">
         Back-End Development
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#account-service" class="md-nav__link">
-    Account Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aed-service" class="md-nav__link">
-    AED Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#emergency-service" class="md-nav__link">
-    Emergency Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-design-between-account-service-and-aed-service" class="md-nav__link">
-    API Design between account-service and AED service
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -626,11 +564,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="ecc-functioning.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="ecc-functioning.html" class="md-nav__link md-nav__link--active">
         Emergency Signalling and ECC functioning
       </a>
+      
     </li>
   
 
@@ -692,42 +640,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#account-service" class="md-nav__link">
-    Account Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aed-service" class="md-nav__link">
-    AED Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#emergency-service" class="md-nav__link">
-    Emergency Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-design-between-account-service-and-aed-service" class="md-nav__link">
-    API Design between account-service and AED service
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -739,105 +651,42 @@
               
   
                 
-  <a href="https://github.com/HeartBeat-SE/HeartBeat-SE-DTM/edit/main/system-design/back-end-development.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/HeartBeat-SE/HeartBeat-SE-DTM/edit/main/system-design/ecc-functioning.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="back-end-development">Back-End Development</h1>
-<p>The back-end refers to the parts of the application that allow it to operate and that cannot be accessed by users. </p>
-<p>We identified three micro-services that communicate with each other and with the mobile application through REST APIs.</p>
-<h2 id="account-service">Account Service</h2>
-<p>The first micro-service regards all the operations concerning users’ accounts. More in details, the tasks performed by the <strong>account-service</strong> include:</p>
-<ol>
-<li>Communication with the accounts’ database through SQL queries to
-insert, update and delete accounts.</li>
-<li>Identification of the suitable first responders on the basis of the location of the emergency.</li>
-<li>Creation and management of the notification alerts sent to users.</li>
-</ol>
-<h2 id="aed-service">AED Service</h2>
-<p>Then, the operations regarding AEDs locations are in charge of the <strong>AED-service</strong>. 
-In particular, the tasks performed by this micro-service include:</p>
-<ol>
-<li>Communication with the AEDs’ database through SQL queries to insert, update and delete AEDs.</li>
-<li>Identification of the AEDs located near the emergency.</li>
-</ol>
-<h2 id="emergency-service">Emergency Service</h2>
-<p>The last micro-service that is part of the back-end development is the <strong>emergency-service</strong>. 
-This service communicates with the other two services through REST APIs, as we saw in the example above, and with the emergency database with SQL queries. 
-The tasks performed by the emergency-service, include:</p>
-<ol>
-<li>Elaboration of the data received by the Emergency Communications Center and emergency database update.</li>
-<li>Sharing of the emergency data to the other micro-services and the user app.</li>
-<li>Sharing with the Emergency Communications Center of the data about first responders who accepted the alert.</li>
-</ol>
-<h2 id="api-design-between-account-service-and-aed-service">API Design between account-service and AED service</h2>
-<div class="highlight"><pre><span></span><code><span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="s">&quot;This is an API between users and AED locations&quot;</span><span class="p">)</span><span class="w"> </span>
-<span class="p">})</span><span class="w"></span>
-
-<span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">users</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">dto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">userModel</span><span class="p">.</span><span class="na">getAllUsers</span><span class="p">()){</span><span class="w"></span>
-<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">userDto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">convertToUserDto</span><span class="p">(</span><span class="n">user</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">dto</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">userDto</span><span class="p">)</span><span class="w"></span>
+<h1 id="emergency-communication-center-functioning">Emergency Communication Center Functioning</h1>
+<p>This section explains more in details the role that the Emergency Communications System has in triggering the HeartBeat emergency system.</p>
+<p>As we saw before, the emergency management system is triggered by the assignment of the <em>code blue</em> to an emergency.
+This code is manually assigned by the ECC operator once he/she obtained all the relevant information about the emergency.</p>
+<p>When this happens, the HeartBeat emergency management system will receive the following data:</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;emergencyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0001&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15:36&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;67&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bank&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
-
-<span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">emergencies</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">dto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">emergency</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">emergencyModel</span><span class="p">.</span><span class="na">getAllEmergencies</span><span class="p">()){</span><span class="w"></span>
-<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">emergencyDto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">convertToEmergencyDto</span><span class="p">(</span><span class="n">emergency</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">dto</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">emergencyDto</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
-
-<span class="n">app</span><span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="s">&quot;/users&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">userModel</span><span class="p">.</span><span class="na">registerNewUser</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">userId</span><span class="p">,</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">name</span><span class="p">,</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">city</span><span class="p">)</span><span class="w"> </span>
-<span class="w">        </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">userModel</span><span class="p">.</span><span class="na">getUserById</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">body</span><span class="p">.</span><span class="na">userId</span><span class="p">))</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="p">){</span><span class="w"></span>
-<span class="w">        </span><span class="n">res</span><span class="p">.</span><span class="na">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="na">json</span><span class="p">({</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w">   </span>
-<span class="p">})</span><span class="w"></span>
-
-<span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">locations</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">locations</span><span class="p">)</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
-
-<span class="n">app</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">locations</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="o">/</span><span class="n">users</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="w"> </span><span class="n">res</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">dto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userModel</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">getAllUsers</span><span class="p">()</span><span class="w"> </span>
-<span class="w">        </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="na">locations</span><span class="p">.</span><span class="na">includes</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="na">params</span><span class="p">.</span><span class="na">id</span><span class="p">))</span><span class="w"> </span>
-<span class="w">        </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">convertToUserDto</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
-<p>The code block showed above displays the design of some APIs that perform the following functions:</p>
-<ul>
-<li>Read data about users</li>
-<li>Add new users</li>
-<li>Read data about the emergency</li>
-<li>Read data about AED locations</li>
-<li>Read data about AED locations based on the location of first responders</li>
-</ul>
-<p><a href="https://github.com/HeartBeat-SE/System-Design">Click on the following link to see the API implementation</a></p>
+Each emergency that triggers the HeartBeat emergency management system, is assigned to a unique identifier (<em>emergencyId</em>) and data about time, position and reference point are stored.</p>
+<p>The position, expressed with coordinates, will be used by the system to identify First Resopnders thar located nearby the emergency site.</p>
+<p><a href="https://github.com/HeartBeat-SE/ECC-Software">This simple python program</a> simulates this process and produces the following output:</p>
+<p><img alt="" src="python-output.jpg" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 19:14:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 20:06:58</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">August 23, 2022 20:59:47</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 17, 2022 20:06:58</span>
       
     
   </small>
@@ -869,7 +718,7 @@ The tasks performed by the emergency-service, include:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="database-system.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Database System" rel="prev">
+        <a href="front-end-development.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Front-End Development" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -878,20 +727,20 @@ The tasks performed by the emergency-service, include:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Database System
+              Front-End Development
             </div>
           </div>
         </a>
       
       
         
-        <a href="front-end-development.html" class="md-footer__link md-footer__link--next" aria-label="Next: Front-End Development" rel="next">
+        <a href="../conclusions.html" class="md-footer__link md-footer__link--next" aria-label="Next: Conclusions" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Front-End Development
+              Conclusions
             </div>
           </div>
           <div class="md-footer__button md-icon">

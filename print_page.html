@@ -564,6 +564,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system-design/ecc-functioning.html" class="md-nav__link">
+        Emergency Signalling and ECC functioning
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -765,6 +779,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#system-design-ecc-functioning" class="md-nav__link">
+    15. Emergency Signalling and ECC functioning
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -772,7 +793,7 @@
       
         <li class="md-nav__item">
   <a href="#conclusions" class="md-nav__link">
-    15. Conclusions
+    16. Conclusions
   </a>
   
 </li>
@@ -954,6 +975,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#system-design-ecc-functioning" class="md-nav__link">
+    15. Emergency Signalling and ECC functioning
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -961,7 +989,7 @@
       
         <li class="md-nav__item">
   <a href="#conclusions" class="md-nav__link">
-    15. Conclusions
+    16. Conclusions
   </a>
   
 </li>
@@ -1408,7 +1436,25 @@ While the <strong>web portal</strong> only constitutes an alternative means by w
 <li>AEDs’ data entry and update.</li>
 <li>Display of the notification alert and sharing of the data of users who accept it.</li>
 <li>Display of AEDs and communication with the mapping platform.</li>
-</ol></section><h1 class='nav-section-title-end'>Ended: System Design</h1><section class="print-page" id="conclusions"><h1 id="conclusions-conclusions">Conclusions</h1>
+</ol></section><section class="print-page" id="system-design-ecc-functioning"><h1 id="system-design-ecc-functioning-emergency-communication-center-functioning">Emergency Communication Center Functioning</h1>
+<p>This section explains more in details the role that the Emergency Communications System has in triggering the HeartBeat emergency system.</p>
+<p>As we saw before, the emergency management system is triggered by the assignment of the <em>code blue</em> to an emergency.
+This code is manually assigned by the ECC operator once he/she obtained all the relevant information about the emergency.</p>
+<p>When this happens, the HeartBeat emergency management system will receive the following data:</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;emergencyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0001&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15:36&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;67&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bank&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+Each emergency that triggers the HeartBeat emergency management system, is assigned to a unique identifier (<em>emergencyId</em>) and data about time, position and reference point are stored.</p>
+<p>The position, expressed with coordinates, will be used by the system to identify First Resopnders thar located nearby the emergency site.</p>
+<p><a href="https://github.com/HeartBeat-SE/ECC-Software">This simple python program</a> simulates this process and produces the following output:</p>
+<p><img alt="" src="system-design/python-output.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: System Design</h1><section class="print-page" id="conclusions"><h1 id="conclusions-conclusions">Conclusions</h1>
 <p>Working on this project proved to be a great challenge for us, especially
 because of our non-technical academic background. 
 We found it difficult to remain coherent along all the process of design and trying to integrate all the notions from the course was not easy.</p>
