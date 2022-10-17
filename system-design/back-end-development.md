@@ -48,6 +48,16 @@ app.get('/users', (req, res) => {
     res.json(dto)
 })
 
+app.get('/emergencies', (req, res) => {
+    let dto = []
+    for(emergency of emergencyModel.getAllEmergencies()){
+        let emergencyDto = convertToEmergencyDto(emergency)
+        dto.push(emergencyDto)
+    }
+    
+    res.json(dto)
+})
+
 app.post("/users", (req, res) => { 
 	try {
 		userModel.registerNewUser(req.body.userId, req.body.name, req.body.city) 
