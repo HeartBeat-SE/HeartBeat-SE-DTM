@@ -1390,8 +1390,14 @@ The tasks performed by the emergency-service, include:</p>
 <span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="na">json</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span><span class="w"></span>
 <span class="p">})</span><span class="w"></span>
 </code></pre></div>
-<p>In the script showed above, the design of the APIs that allow the communication between these two micro-services is displayed. 
-Here we can see some examples of ’get’ and ’post’ requests on users’ accounts, as well as some ’get’ requests on the AED-service.</p></section><section class="print-page" id="system-design-front-end-development"><h1 id="system-design-front-end-development-front-end-development">Front-End Development</h1>
+<p>The code block showed above displays the design of some APIs that perform the following functions:</p>
+<ul>
+<li>Read data about users</li>
+<li>Add new users</li>
+<li>Read data about the emergency</li>
+<li>Read data about AED locations</li>
+<li>Read data about AED locations based on the location of first responders</li>
+</ul></section><section class="print-page" id="system-design-front-end-development"><h1 id="system-design-front-end-development-front-end-development">Front-End Development</h1>
 <p>Front-end development refers to the client side of the system with which users can interact directly. For HeartBeat, users have at disposal both a mobile app and a web portal:</p>
 <p>The <strong>mobile app</strong> represents the main interface for users as some operations need direct access to active localization, camera or the calling system. 
 While the <strong>web portal</strong> only constitutes an alternative means by which users can update their profiles.</p>
