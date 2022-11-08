@@ -390,48 +390,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="emergency-progress-management.html" class="md-nav__link">
-        Emergency Progress Management
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="user-account-management.html" class="md-nav__link">
-        User Account Management
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="aed-database-management.html" class="md-nav__link">
-        AED Database Management
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -675,15 +633,127 @@
 <p><img alt="" src="use-case.png" /></p>
 <p>In this section we will analyze more in details each use case identified in the HeartBeat system.</p>
 <ol>
-<li><strong>Emergency Signalling</strong></li>
+<li>
+<p><strong>Emergency Signalling</strong></p>
+<ul>
+<li>Primary actor: Emergency Communications System</li>
+<li>Scope: Send the emergency notification to First Responders</li>
+<li>Scenario: somebody calls the 118 for a medical emergency regarding a cardiac arrest</li>
+</ul>
+</li>
 </ol>
+<p>It all starts when the '118' emergency number is called for a victim of cardio-respiratory arrest.
+ As soon as the operator has verified that the emergency regards a cardio-respiratory arrest, he/she assigns the <em>code blue</em> to it.</p>
+<p>The assignment of the <em>code blue</em> to an emergency triggers the <strong>emergency management system</strong>, which receives the data about the emergency and starts searching for suitable First Responders.</p>
+<p>First responders are selected according to two variables:</p>
+<ul>
+<li>If the geo-location on the mobile phone is active, First Responder located within 1 km from the emergency site, will be notified.</li>
+<li>If the geo-location on the mobile phone if switched off, First Responders will be notified according to the municipality selected during the registration.</li>
+</ul>
+<p>This use case terminates when suitable First Responders receive the <strong>emergency alert</strong>.</p>
+<ol start="2">
+<li>
+<p><strong>View Current AED</strong></p>
+<ul>
+<li>Primary actor: Emergency Communications System &amp; User / First Responder</li>
+<li>Scope: Visualize AEDs on the map and display information</li>
+<li>Scenario: Users want to see AEDs located near them in a specific moment</li>
+</ul>
+</li>
+</ol>
+<p>When a user wants to see AEDs displayed on the map, the system will detect the device location,and will display AEDs located in the area of 1 km from the user.</p>
+<p>The distance of 1km is set as default but users can zoom in/out the map to limit/extend the research.
+In the case in which the users' location is not available, the system will display AEDs according to the municipality selected at the time registration.</p>
+<p>Each AED stored in the database has a profile containing all the relevant information, including the address, the reference point and available hours.
+Once the user selects a specific defibrillator, the system will display these data.</p>
+<ol start="3">
+<li>
+<p><strong>Update AED</strong></p>
+<ul>
+<li>Primary actor: Emergency Communication System &amp; User / First Responder</li>
+<li>Scope: New AED is inserted in the system</li>
+<li>Scenario: A new AED is inserted in the system by the Emergency Communication System or a user</li>
+</ul>
+</li>
+</ol>
+<p>When a user or the Emergency Communication System wants to register a new AED, he/she will need to fill out the registration form with the following data:</p>
+<ul>
+<li>Name of the place (reference point)</li>
+<li>Address</li>
+<li>Location (coordinates)</li>
+<li>Additional information about the location [optional]</li>
+<li>Availability (month - days - hours)</li>
+<li>Picture [optional]</li>
+</ul>
+<p>Then, once the form has been submitted, the system confirms the registration of the new AED and updates the ECC database with the new information.</p>
+<p><em>Extension</em>: Registration may fail due to invalid or missing data. If this happens, the user will have to re-enter the data and wait for confirmation.</p>
+<ol start="4">
+<li>
+<p><strong>Emergency Management</strong></p>
+<ul>
+<li>Primary actor: First Responder </li>
+<li>Scope: Accept / Decline the emergency alert</li>
+<li>Scenario: A First Responders receives an emergency alert and either accepts or declines it</li>
+</ul>
+</li>
+</ol>
+<p>When a first responder receives a help request, he/she clicks on the notification, which will automatically open the application and turn the geo-location on.</p>
+<p>The First Responder can accept, decline or ignore the alert.
+Once the First Responders has accepted the request, the system will send a confirmation to the Emergency Communications Center, which will see the responder's movements in real-time.</p>
+<p>At the same time, the system will display the emergency details to the first responders who accepted the request, which are respectively:</p>
+<ul>
+<li>Time of alert</li>
+<li>Reference point</li>
+<li>Address</li>
+<li>Ambulance ETA</li>
+</ul>
+<ol start="5">
+<li>
+<p><strong>Registration</strong></p>
+<ul>
+<li>Primary actor: First Responders</li>
+<li>Scope: new users join the application</li>
+<li>Scenario: a user that has obtained a BLSD certificate wants to subscribe to the application creating their profile</li>
+</ul>
+</li>
+</ol>
+<p>After having downloaded the application, users will fill a registration form with the following data:</p>
+<ul>
+<li>Name and Surname</li>
+<li>Email [to be confirmed]</li>
+<li>Telephone</li>
+<li>Municipality (if the geo-localization is not active, the emergency alert will be sent according to the municipality selected) </li>
+<li>BLSD certificate (emission body)<ul>
+<li>Date of emission</li>
+<li>Period of validity</li>
+</ul>
+</li>
+<li>Tax code</li>
+<li>Picture [optional]</li>
+</ul>
+<p>At the time of registration, users will also have to authorize the access to location (when using the app), as well as confirm the terms and conditions of the application.</p>
+<p>Once users have submitted the form, they will wait for confirmation to be sent by the system.</p>
+<p><em>Extension</em>: Registration may fail due to invalid or missing data. If this happens, the user will have to re-enter the data and wait for confirmation.</p>
+<ol start="6">
+<li>
+<p><strong>UPdate Certificate</strong></p>
+<ul>
+<li>Primary Actor: First Responder</li>
+<li>Scope: update an expired certificate in order to be able to intervene in case of emergency</li>
+<li>Scenario: the BLSD certificate will expire within a one-month period</li>
+</ul>
+</li>
+</ol>
+<p>The system will automatically calculate the date of expiry and, one month before, it will notify the user to update the certificate.</p>
+<p>Users can update their certificate at any time by updating their profile.</p>
+<p><em>Extension</em>: Updating may fail due to invalid or missing data. If this happens, the user will have to re-enter the data and wait for confirmation.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 7, 2022 17:01:26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 8, 2022 15:33:00</span>
       
         <br>
         Created:
@@ -735,13 +805,13 @@
       
       
         
-        <a href="emergency-progress-management.html" class="md-footer__link md-footer__link--next" aria-label="Next: Emergency Progress Management" rel="next">
+        <a href="../software-requirements/performance-requirements.html" class="md-footer__link md-footer__link--next" aria-label="Next: Performance Requirements" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Emergency Progress Management
+              Performance Requirements
             </div>
           </div>
           <div class="md-footer__button md-icon">
