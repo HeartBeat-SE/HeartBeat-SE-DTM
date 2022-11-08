@@ -76,8 +76,8 @@ At the same time, the system will display the emergency details to the first res
 5. **Registration**
 
     - Primary actor: First Responders
-    - Scope: new users join the application
-    - Scenario: a user that has obtained a BLSD certificate wants to subscribe to the application creating their profile
+    - Scope: New users join the application
+    - Scenario: A user that has obtained a BLSD certificate wants to subscribe to the application creating their profile
 
 After having downloaded the application, users will fill a registration form with the following data:
 
@@ -100,8 +100,8 @@ Once users have submitted the form, they will wait for confirmation to be sent b
 6. **Update Certificate**
 
     - Primary Actor: First Responder
-    - Scope: update an expired certificate in order to be able to intervene in case of emergency
-    - Scenario: the BLSD certificate will expire within a one-month period
+    - Scope: Update an expired certificate in order to be able to intervene in case of emergency
+    - Scenario: The BLSD certificate will expire within a one-month period
 
 The system will automatically calculate the date of expiry and, one month before, it will notify the user to update the certificate.
 
