@@ -97,7 +97,7 @@ Once users have submitted the form, they will wait for confirmation to be sent b
 
 *Extension*: Registration may fail due to invalid or missing data. If this happens, the user will have to re-enter the data and wait for confirmation.
 
-6. **UPdate Certificate**
+6. **Update Certificate**
 
     - Primary Actor: First Responder
     - Scope: update an expired certificate in order to be able to intervene in case of emergency
