@@ -6,7 +6,7 @@ In this section we will analyze more in details each use case identified in the 
 
 1. **Emergency Signalling**
 
-    - Primary actor: Emergency Communications System
+    - Primary actor: Emergency Communications Center
     - Scope: Send the emergency notification to First Responders
     - Scenario: somebody calls the 118 for a medical emergency regarding a cardiac arrest
 
@@ -24,7 +24,7 @@ In this section we will analyze more in details each use case identified in the 
 
  2. **View Current AED**
 
-    - Primary actor: Emergency Communications System & User / First Responder
+    - Primary actor: Emergency Communications Center & User / First Responder
     - Scope: Visualize AEDs on the map and display information
     - Scenario: Users want to see AEDs located near them in a specific moment
 
@@ -38,7 +38,7 @@ Once the user selects a specific defibrillator, the system will display these da
 
 3. **Update AED**
 
-    - Primary actor: Emergency Communication System & User / First Responder
+    - Primary actor: Emergency Communication Center & User / First Responder
     - Scope: New AED is inserted in the system
     - Scenario: A new AED is inserted in the system by the Emergency Communication System or a user
 
