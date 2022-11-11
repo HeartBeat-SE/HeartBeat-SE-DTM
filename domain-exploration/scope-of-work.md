@@ -24,9 +24,9 @@ The staff at the time of answering:
 
 Once on site, the personnel sent proceeds to assess the injured person and, after the stabilization and first aid maneuvers, contact the communications center to transmit the patient's data, the situation encountered and to obtain information regarding the hospital to which possibly go.
 
-## Work Context Diagram 
+## Component Diagram 
 
-The context diagram showed below outlines how external entities interact with the software system.
+The diagram showed below outlines how external entities interact with the software system.
 
 ![Work-Context-Diagram](context.jpg)
 
