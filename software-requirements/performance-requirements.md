@@ -22,12 +22,11 @@ Then, we estimated around 50 new AED added each month to the regional register o
 Emergency data refers to the data that are shared by the Emergency Communications Center every time a ’code blue’ is recorded. Keeping in mind that around 150.000 people are victim of sudden heart attack every year, we estimated around 600 emergencies in the area of Emilia Romagna every month.
 
 Finally, first responder refers to the recording of the data of users who accepted the emergency alert, while real-time location concerns the recording of their coordinates. 
-The frequency of these two entities is the same and we estimated that given 600 sudden cardiac arrest, HeartBeat would
-successfully identify suitable first responders and AED 50% of the times.
+The frequency of these two entities is the same and we estimated that given 600 sudden cardiac arrest, HeartBeat would successfully identify suitable first responders and AED 50% of the times.
 
 ## Scalability
 
-Scalability refers to the ability of the software to handle increased workloads with minimal cost impact. In this case, keeping in mind that Heart- Beat operates on a regional level, data should flow at a constant rate.
+Scalability refers to the ability of the software to handle increased workloads with minimal cost impact. In this case, keeping in mind that HeartBeat operates on a regional level, data should flow at a constant rate.
 
 Of course, in case of expansion, the system would have to deal with increased workload and scalability issues. 
 However, for what concerns performance requirements, the most important one regards the speed of execution.

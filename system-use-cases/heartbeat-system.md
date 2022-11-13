@@ -8,9 +8,9 @@ In this section we will analyze more in details each use case identified in the 
 
     - Primary actor: Emergency Communications Center
     - Scope: Send the emergency notification to First Responders
-    - Scenario: somebody calls the 118 for a medical emergency regarding a cardiac arrest
+    - Scenario: somebody calls the 118 emergency number for a medical emergency regarding a cardiac arrest
 
- It all starts when the '118' emergency number is called for a victim of cardio-respiratory arrest.
+ It all starts when the 118 emergency number is called for a victim of cardio-respiratory arrest.
  As soon as the operator has verified that the emergency regards a cardio-respiratory arrest, he/she assigns the *code blue* to it.
 
  The assignment of the *code blue* to an emergency triggers the **emergency management system**, which receives the data about the emergency and starts searching for suitable First Responders.
@@ -18,7 +18,7 @@ In this section we will analyze more in details each use case identified in the 
  First responders are selected according to two variables:
 
  - If the geo-location on the mobile phone is active, First Responder located within 1 km from the emergency site, will be notified.
- - If the geo-location on the mobile phone if switched off, First Responders will be notified according to the municipality selected during the registration.
+ - If the geo-location on the mobile phone is switched off, First Responders will be notified according to the municipality selected during the registration.
 
  This use case terminates when suitable First Responders receive the **emergency alert**.
 
@@ -28,7 +28,7 @@ In this section we will analyze more in details each use case identified in the 
     - Scope: Visualize AEDs on the map and display information
     - Scenario: Users want to see AEDs located near them in a specific moment
 
-When a user wants to see AEDs displayed on the map, the system will detect the device location,and will display AEDs located in the area of 1 km from the user.
+When a user wants to see AEDs displayed on the map, the system will detect the device location, and will display AEDs located in the area of 1 km from the user.
 
 The distance of 1km is set as default but users can zoom in/out the map to limit/extend the research.
 In the case in which the users' location is not available, the system will display AEDs according to the municipality selected at the time registration.
@@ -103,7 +103,7 @@ Once users have submitted the form, they will wait for confirmation to be sent b
     - Scope: Update an expired certificate in order to be able to intervene in case of emergency
     - Scenario: The BLSD certificate will expire within a one-month period
 
-The system will automatically calculate the date of expiry and, one month before, it will notify the user to update the certificate.
+The system will automatically calculate the expiation date and, one month before, it will notify the user to update the certificate.
 
 Users can update their certificate at any time by updating their profile.
 

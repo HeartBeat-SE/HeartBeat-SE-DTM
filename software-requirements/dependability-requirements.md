@@ -1,7 +1,7 @@
 # Dependability Requirements
 
 The dependability of a system reflects the user’s degree of trust in that system. 
-It reflects the extent of the user’s confidence that it will operate as users expect and that it will not ’fail’ in normal use.
+It reflects the extent of the user’s confidence that the software will operate as users expect and that it will not *fail* in normal use.
 
 Dependability covers the related systems attributes of availability, reliability, security, integrity and maintainability.
 
