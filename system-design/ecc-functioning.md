@@ -21,7 +21,7 @@ When this happens, the HeartBeat emergency management system will receive the fo
 ```
 Each emergency that triggers the HeartBeat emergency management system, is assigned to a unique identifier (*emergencyId*) and data about time, position and reference point are stored.
 
-The position, expressed with coordinates, will be used by the system to identify First Resopnders thar located nearby the emergency site.
+The position, expressed with coordinates, will be used by the system to identify First Resopnders that are located nearby the emergency site.
 
 [This simple python program](https://github.com/HeartBeat-SE/ECC-Software) simulates this process and produces the following output:
 

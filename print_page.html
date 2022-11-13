@@ -1085,17 +1085,17 @@ This latter allows 118 operators to follow each step related to an emergency req
 <ul>
 <li>Primary actor: Emergency Communications Center</li>
 <li>Scope: Send the emergency notification to First Responders</li>
-<li>Scenario: somebody calls the 118 for a medical emergency regarding a cardiac arrest</li>
+<li>Scenario: somebody calls the 118 emergency number for a medical emergency regarding a cardiac arrest</li>
 </ul>
 </li>
 </ol>
-<p>It all starts when the '118' emergency number is called for a victim of cardio-respiratory arrest.
+<p>It all starts when the 118 emergency number is called for a victim of cardio-respiratory arrest.
  As soon as the operator has verified that the emergency regards a cardio-respiratory arrest, he/she assigns the <em>code blue</em> to it.</p>
 <p>The assignment of the <em>code blue</em> to an emergency triggers the <strong>emergency management system</strong>, which receives the data about the emergency and starts searching for suitable First Responders.</p>
 <p>First responders are selected according to two variables:</p>
 <ul>
 <li>If the geo-location on the mobile phone is active, First Responder located within 1 km from the emergency site, will be notified.</li>
-<li>If the geo-location on the mobile phone if switched off, First Responders will be notified according to the municipality selected during the registration.</li>
+<li>If the geo-location on the mobile phone is switched off, First Responders will be notified according to the municipality selected during the registration.</li>
 </ul>
 <p>This use case terminates when suitable First Responders receive the <strong>emergency alert</strong>.</p>
 <ol start="2">
@@ -1108,7 +1108,7 @@ This latter allows 118 operators to follow each step related to an emergency req
 </ul>
 </li>
 </ol>
-<p>When a user wants to see AEDs displayed on the map, the system will detect the device location,and will display AEDs located in the area of 1 km from the user.</p>
+<p>When a user wants to see AEDs displayed on the map, the system will detect the device location, and will display AEDs located in the area of 1 km from the user.</p>
 <p>The distance of 1km is set as default but users can zoom in/out the map to limit/extend the research.
 In the case in which the users' location is not available, the system will display AEDs according to the municipality selected at the time registration.</p>
 <p>Each AED stored in the database has a profile containing all the relevant information, including the address, the reference point and available hours.
@@ -1191,7 +1191,7 @@ Once the First Responders has accepted the request, the system will send a confi
 </ul>
 </li>
 </ol>
-<p>The system will automatically calculate the date of expiry and, one month before, it will notify the user to update the certificate.</p>
+<p>The system will automatically calculate the expiation date and, one month before, it will notify the user to update the certificate.</p>
 <p>Users can update their certificate at any time by updating their profile.</p>
 <p><em>Extension</em>: Updating may fail due to invalid or missing data. If this happens, the user will have to re-enter the data and wait for confirmation.</p></section><h1 class='nav-section-title-end'>Ended: System Use Cases</h1>
                         <h1 class='nav-section-title' id='section-software-requirements'>
@@ -1211,14 +1211,13 @@ In the table showed below, we estimated the volume of data flowing to the databa
 <p>Then, we estimated around 50 new AED added each month to the regional register of defibrillators, which would imply updating both the ECC official list and the HeartBeat database.</p>
 <p>Emergency data refers to the data that are shared by the Emergency Communications Center every time a ’code blue’ is recorded. Keeping in mind that around 150.000 people are victim of sudden heart attack every year, we estimated around 600 emergencies in the area of Emilia Romagna every month.</p>
 <p>Finally, first responder refers to the recording of the data of users who accepted the emergency alert, while real-time location concerns the recording of their coordinates. 
-The frequency of these two entities is the same and we estimated that given 600 sudden cardiac arrest, HeartBeat would
-successfully identify suitable first responders and AED 50% of the times.</p>
+The frequency of these two entities is the same and we estimated that given 600 sudden cardiac arrest, HeartBeat would successfully identify suitable first responders and AED 50% of the times.</p>
 <h2 id="software-requirements-performance-requirements-scalability">Scalability</h2>
-<p>Scalability refers to the ability of the software to handle increased workloads with minimal cost impact. In this case, keeping in mind that Heart- Beat operates on a regional level, data should flow at a constant rate.</p>
+<p>Scalability refers to the ability of the software to handle increased workloads with minimal cost impact. In this case, keeping in mind that HeartBeat operates on a regional level, data should flow at a constant rate.</p>
 <p>Of course, in case of expansion, the system would have to deal with increased workload and scalability issues. 
 However, for what concerns performance requirements, the most important one regards the speed of execution.</p></section><section class="print-page" id="software-requirements-dependability-requirements"><h1 id="software-requirements-dependability-requirements-dependability-requirements">Dependability Requirements</h1>
 <p>The dependability of a system reflects the user’s degree of trust in that system. 
-It reflects the extent of the user’s confidence that it will operate as users expect and that it will not ’fail’ in normal use.</p>
+It reflects the extent of the user’s confidence that the software will operate as users expect and that it will not <em>fail</em> in normal use.</p>
 <p>Dependability covers the related systems attributes of availability, reliability, security, integrity and maintainability.</p>
 <h2 id="software-requirements-dependability-requirements-availability">Availability</h2>
 <p>Availability refers to the percentage of time that the infrastructure, system, or solution remains operational under normal  circumstances in order to serve its intended purpose.
@@ -1245,22 +1244,19 @@ Since software is not static, the ability of a software to evolve and change is 
                             System Design <a class='headerlink' href='#section-system-design' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="system-design-software-architecture"><h1 id="system-design-software-architecture-software-architecture">Software Architecture</h1>
-<p>Software architecture is, simply, the organization of the system. This organization includes all components, how they interact with each other, the
-environment in which they operate, and the principles used to design the
-software.</p>
+<p>Software architecture is, simply, the organization of the system. This organization includes all components, how they interact with each other, the environment in which they operate, and the principles used to design the software.</p>
 <p>We can classify all these elements in three categories:</p>
 <ol>
 <li>Database System</li>
 <li>Front-End Technologies</li>
 <li>Back-End Technologies</li>
 </ol>
-<p>In this section we will explore each <strong>micro-service</strong> that composes the system, focusing on the relationships among the components and analyzing
-how they interact with each other.</p></section><section class="print-page" id="system-design-database-system"><h1 id="system-design-database-system-database-system">Database System</h1>
+<p>In this section we will explore each <strong>micro-service</strong> that composes the system, focusing on the relationships among the components and analyzing how they interact with each other.</p></section><section class="print-page" id="system-design-database-system"><h1 id="system-design-database-system-database-system">Database System</h1>
 <p>In our project, the implementation of multiple databases is essential to collect and manage data in a systematic way.</p>
-<p>First, all the information regarding users must be stored and updated in case of changes. Users’ data, identified by a user ID, will be automatically accessed by the system through SQL queries as soon as they are needed for the emergency progress system.</p>
-<p>Then, the registered AEDs must be stored indicating the precise location (expressed using geographical coordinates), the name of the place and all
+<p>First, all the information regarding <strong>users</strong> must be stored and updated in case of changes. Users’ data, identified by a user ID, will be automatically accessed by the system through SQL queries as soon as they are needed for the emergency progress system.</p>
+<p>Then, the registered <strong>AEDs</strong> must be stored indicating the precise location (expressed using geographical coordinates), the name of the place and all
 the information regarding their availability.</p>
-<p>Finally, data about the emergency will be stored in a database that is connected to the emergency micro-service.
+<p>Finally, data about the <strong>emergency</strong> will be stored in a database that is connected to the emergency micro-service.
  The system will attribute an ID to each emergency and will store the following data:</p>
 <ul>
 <li>Coordinates of the emergency.</li>
@@ -1374,37 +1370,20 @@ This code is manually assigned by the ECC operator once he/she obtained all the 
 <span class="p">]</span><span class="w"></span>
 </code></pre></div>
 Each emergency that triggers the HeartBeat emergency management system, is assigned to a unique identifier (<em>emergencyId</em>) and data about time, position and reference point are stored.</p>
-<p>The position, expressed with coordinates, will be used by the system to identify First Resopnders thar located nearby the emergency site.</p>
+<p>The position, expressed with coordinates, will be used by the system to identify First Resopnders that are located nearby the emergency site.</p>
 <p><a href="https://github.com/HeartBeat-SE/ECC-Software">This simple python program</a> simulates this process and produces the following output:</p>
 <p><img alt="" src="system-design/python-output.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: System Design</h1><section class="print-page" id="conclusions"><h1 id="conclusions-conclusions">Conclusions</h1>
-<p>Working on this project proved to be a great challenge for us, especially
-because of our non-technical academic background. 
+<p>Working on this project proved to be a great challenge for us, especially because of our non-technical academic background. 
 We found it difficult to remain coherent along all the process of design and trying to integrate all the notions from the course was not easy.</p>
-<p>During the planning phase, we found it very useful to conduct an event
-storming session, which allowed us to develop a common knowledge and
-understanding of the business domain.</p>
-<p>Along the way, we encountered some difficulties related to the business
-domain specifically but fortunately, we could rely on the opinion of some
-domain experts who work in the emergency sector. Indeed, we were able to
-take some relevant decisions about the design of the system thanks to their
-expertise.</p>
-<p>Also, tracking the project using GitHub was quite hard initially as we
-approached it at a technical level for the first time. On the other hand, we
-had the possibility to explore the potential of GitHub to store, manage and
-track projects, both developed individually and in team.
-Overall, we agree on the added value that this project gave us, allowing
-us to see in practice the importance of the techniques studied during the
-course, by applying them in a real world scenario.</p>
+<p>During the planning phase, we found it very useful to conduct an event storming session, which allowed us to develop a common knowledge and understanding of the business domain.</p>
+<p>Along the way, we encountered some difficulties related to the business domain specifically but fortunately, we could rely on the opinion of some domain experts who work in the emergency sector. Indeed, we were able to take some relevant decisions about the design of the system thanks to their expertise.</p>
+<p>Also, tracking the project using GitHub was quite hard initially as we approached it at a technical level for the first time. On the other hand, we had the possibility to explore the potential of GitHub to store, manage and track projects, both developed individually and in team.
+Overall, we agree on the added value that this project gave us, allowing us to see in practice the importance of the techniques studied during the course, by applying them in a real world scenario.</p>
 <h2 id="conclusions-domain-driven-design">Domain Driven Design</h2>
-<p>Concerning the Domain Driven Design, we started with a long planning
-session in which we tried to pin down all the concepts to have a clear holistic view of the whole system. 
+<p>Concerning the Domain Driven Design, we started with a long planning session in which we tried to pin down all the concepts to have a clear holistic view of the whole system. 
 After having identified the domain, we were able to map the context of work, identifying all the entities involved in the system.</p>
-<p>The design of bounded contexts was identified as the most challenging
-aspect of DDD, whilst the analysis process carried out with the tools and
-the philosophy transmitted during the course felt quite natural and effective since the beginning.
-Furthermore, developing a ubiquitous language for the project turned
-out to be extremely useful to align the team and provide a common under-
-standing</p>
+<p>The design of bounded contexts was identified as the most challenging aspect of DDD, whilst the analysis process carried out with the tools and the philosophy transmitted during the course felt quite natural and effective since the beginning.
+Furthermore, developing a ubiquitous language for the project turned out to be extremely useful to align the team and provide a common understanding.</p>
 <h2 id="conclusions-devops">DevOps</h2>
 <p>To implement DevOps in our project, the first step to undertake regards the effective integration of people, processes, and tools to obtain a single entity.
 The purpose is to encourage collaboration and align IT goals with business strategy.</p>
